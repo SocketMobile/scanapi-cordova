@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin
+  id="com-socketmobile-scanapi-cordova"
+  version="0.1.0"
+  xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>ScanApiCordova</name>
+  <js-module name="ScanApiCordova" src="www/ScanApiCordova.js">
+    <clobbers target="SocketScanApi" />
+  </js-module>
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="ScanApiCordova">
+        <param name="ios-package" value="ScanApiCordova" />
+      </feature>
+    </config-file>
+    <config-file target="*-Info.plist" parent="UISupportedExternalAccessoryProtocols">
+      <key>UISupportedExternalAccessoryProtocols</key>
+      <array>
+        <string>com.socketmobile.chs</string>
+      </array>
+    </config-file>
+    <source-file src="src/ios/ScanApiCordova.m" />
+    <source-file src="src/ios/sdk/DeviceInfo.m" />
+    <source-file src="src/ios/sdk/ScanApiHelper.mm" />
+    <source-file src="src/ios/sdk/lib/libScanApiCore.a" framework="true"/>
+    <header-file src="src/ios/sdk/DeviceInfo.h" />
+    <header-file src="src/ios/sdk/ScanApiHelper.h" />
+    <header-file src="src/ios/sdk/ScanApiIncludes.h" />
+    <header-file src="src/ios/sdk/include/ISktScanApi.h" />
+    <header-file src="src/ios/sdk/include/ISktScanDecodedData.h" />
+    <header-file src="src/ios/sdk/include/ISktScanDevice.h" />
+    <header-file src="src/ios/sdk/include/ISktScanEvent.h" />
+    <header-file src="src/ios/sdk/include/ISktScanMsg.h" />
+    <header-file src="src/ios/sdk/include/ISktScanObject.h" />
+    <header-file src="src/ios/sdk/include/ISktScanProperty.h" />
+    <header-file src="src/ios/sdk/include/ISktScanSymbology.h" />
+    <header-file src="src/ios/sdk/include/ISktScanVersion.h" />
+    <header-file src="src/ios/sdk/include/ScanAPI.h" />
+    <header-file src="src/ios/sdk/include/SktClassFactory.h" />
+    <header-file src="src/ios/sdk/include/SktScanAPI.h" />
+    <header-file src="src/ios/sdk/include/SktScanCore.h" />
+    <header-file src="src/ios/sdk/include/SktScanDeviceType.h" />
+    <header-file src="src/ios/sdk/include/SktScanErrors.h" />
+    <header-file src="src/ios/sdk/include/SktScanPropIds.h" />
+    <header-file src="src/ios/sdk/include/SktScanTypes.h" />
+    <framework src="ExternalAccessory.framework" />
+    <framework src="AudioToolbox.framework" />
+    <framework src="AVFoundation.framework" />
+  </platform>
+</plugin>

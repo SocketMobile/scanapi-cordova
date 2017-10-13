@@ -1,0 +1,11 @@
+{
+  "name": "scanapicordova",
+  "version": "0.1.0",
+  "cordova": {
+    "id": "com-socketmobile-scanapi",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "description": "Cordova Plugin for Socket Mobile ScanAPI"
+}
